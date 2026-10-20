@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap');
  
-/* ==========================================================
-   TERRAZA DE SUKOL - style.css
-   Palette (from "Cozy Earthy Bedroom"):
-     Olive  #4B5136  -> headings, footer
-     Walnut #6B4426  -> accents, links, lines
-     Cream  #E8DCC5  -> page background
-   ========================================================== */
- 
+
+/*==========  container of collor  ============*/ 
 :root {
   --olive: #4B5136;
   --walnut: #6B4426;
