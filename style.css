@@ -1,560 +1,560 @@
-        :root {
-          --olive: #4B5136;
-          --walnut: #6B4426;
-          --cream: #E8DCC5;
-          --card: #FFFDF9;
-          --text: #2F2A22;
-        }
-        
-        /* ========== RESET / BASE ========== */
-        *,
-        
-        *::before,
-        
-        *::after {
-          box-sizing: border-box;
-        }
-        
-        html {
-          scroll-behavior: smooth;
-        }
-        
-        body {
-          margin: 0;
-          font-family: 'Poppins', Arial, sans-serif;
-          line-height: 1.7;
-          color: var(--text);
-          background: var(--cream);
-        }
-        
-        img {
-          max-width: 100%;
-        }
-        
-        
-        h1, h2, h3, h4 {
-          font-family: 'Playfair Display', Georgia, serif;
-          line-height: 1.25;
-          color: var(--olive);
-        }
-        
-        a {
-          color: var(--walnut);
-        }
-        
-        a:hover {
-          color: var(--olive);
-        }
-        
-        /* ========== shows a box around the link or FAQ  ==========*/
-        a:focus-visible,
-        summary:focus-visible {
-          outline: 3px solid var(--walnut);
-          outline-offset: 3px;
-        }
-        
-        /* =====  HEADER ===== */
-        
-        /* ========== The VIDEO is the background of the whole header.Logo, title and the navigation going DOWN sit on top of it, on the left. ===========*/
-        header {
-          position: relative;
-          min-height: 100vh;
-          min-height: 100svh;
-          overflow: hidden;
-          background: var(--walnut);   
-        }
-        
-        .header-video {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          z-index: 0;
-        }
-        
-        /*========== block shadow in the lefyt for navigation , in video ==========*/
-        header::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          z-index: 1;
-          background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 60%);
-        }
-        
-        .header-content {
-          position: relative;
-          z-index: 2;
-          display: flex;
-          flex-direction: column;
-          width: 320px;
-          max-width: 100%;
-          padding: 28px 28px 36px;
-          color: #fff;
-        }
-        
-        /*========== logo in the to top and then navigation ========== */
-        .header-content img {
-          order: 1;
-          width: 100px;
-          height: auto;
-          filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
-        }
-        
-        .header-content h1 {
-          order: 2;
-          margin: 16px 0 28px;
-          font-size: 1.7rem;
-          color: #fff;
-          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-        }
-        
-        .header-content nav {
-          order: 3;
-        }
-        
-        /*  ========== navigation for vertical ========== */
-        .header-content nav ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-        
-        .header-content nav a {
-          color: #fff;
-          text-decoration: none;
-          font-size: 0.95rem;
-          font-weight: 500;
-          padding-bottom: 2px;
-          border-bottom: 2px solid transparent;
-          text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
-        }
-        
-        .header-content nav a:hover {
-          color: #fff;
-          border-bottom-color: var(--cream);
-        }
-        
-        /* ==========  main  ========== */
-        main > section {
-          padding: 60px 5%;
-          scroll-margin-top: 10px;
-        }
-        
-        main h2 {
-          font-size: clamp(1.8rem, 4vw, 2.6rem);
-          margin: 0 0 0.7em;
-        }
-        
-        /*========= small walnut line under headings ========== */
-        main h2::after {
-          content: "";
-          display: block;
-          width: 60px;
-          height: 3px;
-          margin-top: 12px;
-          background: var(--walnut);
-        }
-        
-        /* ==========  HOME , Rooms , Event , Amenities ========== */
-        #home {
-          display: grid;
-          grid-template-columns: minmax(0, 600px);
-          row-gap: 0;
-        }
-        
-        /*==========  Hide the spacing br tags  ==========*/
-        #home > br,
-        
-        #home > article.amenities {
-          display: none;            /* empty / spacing elements in the HTML */
-        }
-        
-        #home > p:first-of-type {
-          margin: 0 0 40px;
-        }
-        
-        /*========== Rooms Event amenities ==========*/
-        #home > article {
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 24px;
-          background: var(--card);
-          border-radius: 12px;
-          overflow: hidden;
-        }
-        
-        /* each one goes down: picture, title, paragraph, Explore (left-aligned) */
-        #home > article img,
-        #home > img {
-          display: block;
-          width: 100%;
-          height: 300px;
-          object-fit: cover;
-        }
-        
-        #home > article h3,
-        #home > h3 {
-          margin: 0;
-          padding: 20px 24px 0;
-        }
-        
-        #home > article p,
-        #home > p:last-of-type {
-          margin: 0;
-          padding: 10px 24px;
-          font-size: 0.92rem;
-        }
-        
-        /*========== Amenities: its image, title, text and link sit directly inside home ========== */
-        #home > img {
-          border-radius: 12px 12px 0 0;
-        }
-        
-        #home > h3,
-        #home > p:last-of-type,
-        #home > a {
-          background: var(--card);
-        }
-        
-        #home > a {
-          border-radius: 0 0 12px 12px;
-        }
-        
-        /* ========== link Explore ========== */
-        #home a {
-          padding: 12px 24px 26px;
-          font-size: 0.8rem;
-          font-weight: 600;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          text-decoration: none;
-          color: var(--walnut);
-        }
-        
-        #home a:hover {
-          color: var(--olive);
-          text-decoration: underline;
-        }
-        
-        /* =============  ABOUT US  ============ */
-        
-        /*========== left in heading and picture *  ==========*/
-        #about_us > h3:first-of-type {
-          margin: 0 0 24px;
-          font-size: clamp(2rem, 4vw, 2.8rem);
-        }
-        
-        #about_us > h3:first-of-type::before {
-          content: "";
-          display: block;
-          width: 80px;
-          height: 4px;
-          margin-bottom: 20px;
-          background: var(--walnut);
-        }
-        
-        /* picture on top, the paragraph goes below it */
-        #about_us > img {
-          display: block;
-          width: min(700px, 100%);
-          height: auto;
-          margin-bottom: 24px;
-          border: 8px solid var(--card);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-        }
-        
-        /*============= right column: the paragraph with the dotted line =============*/
-        #about_us > p:first-of-type {
-          max-width: 800px;
-          margin: 0;
-          padding-left: 32px;
-          border-left: 1px dotted var(--walnut);
-        }
-        
-        #about_us > p:first-of-type br {
-          display: none;            
-        }
-        
-        /* FAQ */
-        #about_us > h3:nth-of-type(2) {
-          margin: 70px 0 0;
-          font-size: 1.1rem;
-          color: var(--walnut);
-        }
-        
-        #about_us > h2 {
-          margin-top: 4px;
-        }
-        
-        #about_us details {
-          width: 100%;
-          max-width: 800px;
-        }
-        
-        details {
-          background: var(--card);
-          border-radius: 10px;
-          padding: 16px 22px;
-          margin-bottom: 12px;
-        }
-        
-        summary {
-          cursor: pointer;
-          font-weight: 600;
-          color: var(--olive);
-        }
-        
-        details[open] summary {
-          margin-bottom: 8px;
-        }
-        
-        details p {
-          margin: 0;
-        }
-        
-        /* ============== SERVICES ,,Rooms,Cottages,Feedback ============== */
-        #services > h2 {
-          margin-bottom: 1em;
-        }
-        
-        #services > section {
-          max-width: 800px;
-          margin: 0 0 28px;
-          padding: 32px;
-          background: var(--card);
-          border-radius: 12px;
-          scroll-margin-top: 10px;
-        }
-        
-        #services > section > h3:first-child {
-          margin-top: 0;
-          font-size: 1.8rem;
-        }
-        
-        #rooms h4 {
-          margin: 18px 0 8px;
-          color: var(--walnut);
-          font-size: 1.1rem;
-        }
-        
-        #rooms p {
-          margin: 0;
-        }
-        
-        #rooms p strong {
-          color: var(--walnut);
-        }
-        
-        /*============== Feedback ================*/
-        #feedback h2 {
-          margin-top: 10px;
-          font-size: 1.6rem;
-        }
-        
-        #feedback h3 {
-          font-size: 1.15rem;
-        }
-        
-        #feedback blockquote {
-          margin: 12px 0;
-          padding: 14px 20px;
-          border-left: 4px solid var(--walnut);
-          background: var(--cream);
-          border-radius: 0 8px 8px 0;
-          font-style: italic;
-        }
-        
-        #feedback ul {
-          margin: 6px 0 20px;
-          padding-left: 22px;
-        }
-        
-        /* ============== GALLERY ============= */
-        
-        /* pictures go down one by one */
-        #gallery img {
-          display: block;
-          width: min(700px, 100%);
-          height: auto;
-          margin-bottom: 16px;
-          border-radius: 10px;
-        }
-        
-        /* ==========  AUTHORS ==========*/
-        #authors {
-          padding-bottom: 0;
-        }
-        
-        #authors > h3,
-        
-        #authors > p {
-          width: min(700px, 100%);
-        }
-        
-        main > h3,
-        
-        main > p {
-          width: min(700px, 90%);
-          margin-left: 5%;
-        }
-        
-        #authors > h3,
-        
-        main > h3 {
-          margin-top: 0;
-          margin-bottom: 0;
-          padding: 26px 24px 4px;
-          background: var(--card);
-          border-radius: 12px 12px 0 0;
-          font-size: 1.3rem;
-        }
-        
-        #authors > p,
-        
-        main > p {
-          margin-top: 0;
-          margin-bottom: 22px;
-          padding: 0 24px 26px;
-          background: var(--card);
-          border-radius: 0 0 12px 12px;
-          overflow-wrap: anywhere;
-        }
-        
-        /* ==========  LOCATION ========== */
-        #location iframe {
-          display: block;
-          width: 100%;
-          max-width: 900px;
-          height: 400px;
-          margin-top: 24px;
-          border: 0;
-          border-radius: 12px;
-        }
-        
-        /* ==========  FOOTER  ========== */
-        footer {
-          display: grid;
-          grid-template-columns: 1.2fr 1.2fr 1fr;
-          margin-top: 40px;
-          background: var(--olive);
-          color: var(--cream);
-        }
-        
-        footer > div {
-          padding: 50px 5% 40px;
-        }
-        
-        footer > div + div {
-          border-left: 1px solid rgba(232, 220, 197, 0.25);
-        }
-        
-        footer h3 {
-          margin: 0 0 14px;
-          color: #fff;
-          font-size: 1.4rem;
-        }
-        
-        footer p {
-          margin: 0;
-        }
-        
-        footer a {
-          color: var(--cream);
-          overflow-wrap: anywhere;
-        }
-        
-        footer a:hover {
-          color: #fff;
-        }
-        
-        footer .copyright {
-          grid-column: 1 / -1;
-          padding: 18px 5%;
-          font-size: 0.9rem;
-          background: rgba(0, 0, 0, 0.4);
-        }
-        
-        /* =====  responsive for tablet to compatible ===== */
-        @media (max-width: 900px) {
-        
-          /*====== Footer =========*/
-          footer {
-            grid-template-columns: 1fr;
-          }
-        
-          footer > div + div {
-            border-left: none;
-            border-top: 1px solid rgba(232, 220, 197, 0.25);
-          }
-        }
-        
-        
-        
-        
-        /* =====  responsive for phone to compatible view ===== */
-        @media (max-width: 600px) {
-        
-          /*=============== header, video stays as the background ========== */
-        
-          /* phone: not full screen. The video is a banner on top, then the logo, title and navigation below it */
-          header {
-            display: block;
-            min-height: 0;
-          }
-        
-          .header-video {
-            position: static;
-            display: block;
-            height: 56vw;
-            min-height: 220px;
-          }
-        
-          header::after {
-            display: none;
-          }
-        
-          .header-content {
-            position: static;
-            width: 100%;
-            padding: 20px 5% 28px;
-            background: var(--walnut);
-          }
-        
-          .header-content img {
-            width: 80px;
-          }
-        
-          .header-content h1 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-          }
-        
-          main > section {
-            padding: 50px 5%;
-          }
-        
-          /*============ Home: picture, Explore ============*/
-          #home > article img,
-          #home > img {
-            height: 200px;
-          }
-        
-          #services > section {
-            padding: 22px 18px;
-          }
-        
-          #location iframe {
-            height: 300px;
-          }
-        }
-        
-        /* ==========  smoth to click the navigation bar to automatic scrooll bar ========== */
-        @media (prefers-reduced-motion: reduce) {
-          html {
-            scroll-behavior: auto;
-          }
-        }
+:root {
+  --olive: #4B5136;
+  --walnut: #6B4426;
+  --cream: #E8DCC5;
+  --card: #FFFDF9;
+  --text: #2F2A22;
+}
+ 
+/* ========== RESET / BASE ========== */
+*,
+ 
+*::before,
+ 
+*::after {
+  box-sizing: border-box;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--cream);
+}
+ 
+img {
+  max-width: 100%;
+}
+ 
+ 
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.25;
+  color: var(--olive);
+}
+ 
+a {
+  color: var(--walnut);
+}
+ 
+a:hover {
+  color: var(--olive);
+}
+ 
+/* ========== shows a box around the link or FAQ  ==========*/
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--walnut);
+  outline-offset: 3px;
+}
+ 
+/* =====  HEADER ===== */
+ 
+/* ========== The VIDEO is the background of the whole header.Logo, title and the navigation going DOWN sit on top of it, on the left. ===========*/
+header {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--walnut);   
+}
+ 
+.header-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+ 
+/*========== block shadow in the lefyt for navigation , in video ==========*/
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 60%);
+}
+ 
+.header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  max-width: 100%;
+  padding: 28px 28px 36px;
+  color: #fff;
+}
+ 
+/*========== logo in the to top and then navigation ========== */
+.header-content img {
+  order: 1;
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+ 
+.header-content h1 {
+  order: 2;
+  margin: 16px 0 28px;
+  font-size: 1.7rem;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+ 
+.header-content nav {
+  order: 3;
+}
+ 
+/*  ========== navigation for vertical ========== */
+.header-content nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.header-content nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+ 
+.header-content nav a:hover {
+  color: #fff;
+  border-bottom-color: var(--cream);
+}
+ 
+/* ==========  main  ========== */
+main > section {
+  padding: 60px 5%;
+  scroll-margin-top: 10px;
+}
+ 
+main h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 0.7em;
+}
+ 
+/*========= small walnut line under headings ========== */
+main h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin-top: 12px;
+  background: var(--walnut);
+}
+ 
+/* ==========  HOME , Rooms , Event , Amenities ========== */
+#home {
+  display: grid;
+  grid-template-columns: minmax(0, 600px);
+  row-gap: 0;
+}
+ 
+/*==========  Hide the spacing br tags  ==========*/
+#home > br,
+ 
+#home > article.amenities {
+  display: none;            /* empty / spacing elements in the HTML */
+}
+ 
+#home > p:first-of-type {
+  margin: 0 0 40px;
+}
+ 
+/*========== Rooms Event amenities ==========*/
+#home > article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+}
+ 
+/* each one goes down: picture, title, paragraph, Explore (left-aligned) */
+#home > article img,
+#home > img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+ 
+#home > article h3,
+#home > h3 {
+  margin: 0;
+  padding: 20px 24px 0;
+}
+ 
+#home > article p,
+#home > p:last-of-type {
+  margin: 0;
+  padding: 10px 24px;
+  font-size: 0.92rem;
+}
+ 
+/*========== Amenities: its image, title, text and link sit directly inside home ========== */
+#home > img {
+  border-radius: 12px 12px 0 0;
+}
+ 
+#home > h3,
+#home > p:last-of-type,
+#home > a {
+  background: var(--card);
+}
+ 
+#home > a {
+  border-radius: 0 0 12px 12px;
+}
+ 
+/* ========== link Explore ========== */
+#home a {
+  padding: 12px 24px 26px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--walnut);
+}
+ 
+#home a:hover {
+  color: var(--olive);
+  text-decoration: underline;
+}
+ 
+/* =============  ABOUT US  ============ */
+ 
+/*========== left in heading and picture *  ==========*/
+#about_us > h3:first-of-type {
+  margin: 0 0 24px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+ 
+#about_us > h3:first-of-type::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin-bottom: 20px;
+  background: var(--walnut);
+}
+ 
+/* picture on top, the paragraph goes below it */
+#about_us > img {
+  display: block;
+  width: min(700px, 100%);
+  height: auto;
+  margin-bottom: 24px;
+  border: 8px solid var(--card);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+ 
+/*============= right column: the paragraph with the dotted line =============*/
+#about_us > p:first-of-type {
+  max-width: 800px;
+  margin: 0;
+  padding-left: 32px;
+  border-left: 1px dotted var(--walnut);
+}
+ 
+#about_us > p:first-of-type br {
+  display: none;            
+}
+ 
+/* ===========  FAQ  =========== */
+#about_us > h3:nth-of-type(2) {
+  margin: 70px 0 0;
+  font-size: 1.1rem;
+  color: var(--walnut);
+}
+ 
+#about_us > h2 {
+  margin-top: 4px;
+}
+ 
+#about_us details {
+  width: 100%;
+  max-width: 800px;
+}
+ 
+details {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 16px 22px;
+  margin-bottom: 12px;
+}
+ 
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--olive);
+}
+ 
+details[open] summary {
+  margin-bottom: 8px;
+}
+ 
+details p {
+  margin: 0;
+}
+ 
+/* ============== SERVICES ,,Rooms,Cottages,Feedback ============== */
+#services > h2 {
+  margin-bottom: 1em;
+}
+ 
+#services > section {
+  max-width: 800px;
+  margin: 0 0 28px;
+  padding: 32px;
+  background: var(--card);
+  border-radius: 12px;
+  scroll-margin-top: 10px;
+}
+ 
+#services > section > h3:first-child {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+ 
+#rooms h4 {
+  margin: 18px 0 8px;
+  color: var(--walnut);
+  font-size: 1.1rem;
+}
+ 
+#rooms p {
+  margin: 0;
+}
+ 
+#rooms p strong {
+  color: var(--walnut);
+}
+ 
+/*============== Feedback ================*/
+#feedback h2 {
+  margin-top: 10px;
+  font-size: 1.6rem;
+}
+ 
+#feedback h3 {
+  font-size: 1.15rem;
+}
+ 
+#feedback blockquote {
+  margin: 12px 0;
+  padding: 14px 20px;
+  border-left: 4px solid var(--walnut);
+  background: var(--cream);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+ 
+#feedback ul {
+  margin: 6px 0 20px;
+  padding-left: 22px;
+}
+ 
+/* ============== GALLERY ============= */
+ 
+/* pictures go down one by one */
+#gallery img {
+  display: block;
+  width: min(700px, 100%);
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+ 
+/* ==========  AUTHORS ==========*/
+#authors {
+  padding-bottom: 0;
+}
+ 
+#authors > h3,
+ 
+#authors > p {
+  width: min(700px, 100%);
+}
+ 
+main > h3,
+ 
+main > p {
+  width: min(700px, 90%);
+  margin-left: 5%;
+}
+ 
+#authors > h3,
+ 
+main > h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 26px 24px 4px;
+  background: var(--card);
+  border-radius: 12px 12px 0 0;
+  font-size: 1.3rem;
+}
+ 
+#authors > p,
+ 
+main > p {
+  margin-top: 0;
+  margin-bottom: 22px;
+  padding: 0 24px 26px;
+  background: var(--card);
+  border-radius: 0 0 12px 12px;
+  overflow-wrap: anywhere;
+}
+ 
+/* ==========  LOCATION ========== */
+#location iframe {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  margin-top: 24px;
+  border: 0;
+  border-radius: 12px;
+}
+ 
+/* ==========  FOOTER  ========== */
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 40px;
+  background: var(--olive);
+  color: var(--cream);
+}
+ 
+footer > div {
+  padding: 50px 5% 40px;
+}
+ 
+footer > div + div {
+  border-top: 1px solid rgba(232, 220, 197, 0.25);
+}
+ 
+footer h3 {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 1.4rem;
+}
+ 
+footer p {
+  margin: 0;
+}
+ 
+footer a {
+  color: var(--cream);
+  overflow-wrap: anywhere;
+}
+ 
+footer a:hover {
+  color: #fff;
+}
+ 
+footer .copyright {
+  grid-column: 1 / -1;
+  padding: 18px 5%;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+ 
+/* =====  responsive for tablet to compatible ===== */
+@media (max-width: 900px) {
+ 
+  /*====== Footer =========*/
+  footer {
+    grid-template-columns: 1fr;
+  }
+ 
+  footer > div + div {
+    border-left: none;
+    border-top: 1px solid rgba(232, 220, 197, 0.25);
+  }
+}
+ 
+ 
+ 
+ 
+/* =====  responsive for phone to compatible view ===== */
+@media (max-width: 600px) {
+ 
+  /*=============== header, video stays as the background ========== */
+ 
+  /* phone: not full screen. The video is a banner on top, then the logo, title and navigation below it */
+  header {
+    display: block;
+    min-height: 0;
+  }
+ 
+  .header-video {
+    position: static;
+    display: block;
+    height: 56vw;
+    min-height: 220px;
+  }
+ 
+  header::after {
+    display: none;
+  }
+ 
+  .header-content {
+    position: static;
+    width: 100%;
+    padding: 20px 5% 28px;
+    background: var(--walnut);
+  }
+ 
+  .header-content img {
+    width: 80px;
+  }
+ 
+  .header-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+ 
+  main > section {
+    padding: 50px 5%;
+  }
+ 
+  /*============ Home: picture, Explore ============*/
+  #home > article img,
+  #home > img {
+    height: 200px;
+  }
+ 
+  #services > section {
+    padding: 22px 18px;
+  }
+ 
+  #location iframe {
+    height: 300px;
+  }
+}
+ 
+/* ==========  smoth to click the navigation bar to automatic scrooll bar ========== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
