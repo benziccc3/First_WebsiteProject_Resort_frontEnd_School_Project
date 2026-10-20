@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap');
+ 
+/* ==========================================================
+   TERRAZA DE SUKOL - style.css
+   Palette (from "Cozy Earthy Bedroom"):
+     Olive  #4B5136  -> headings, footer
+     Walnut #6B4426  -> accents, links, lines
+     Cream  #E8DCC5  -> page background
+   ========================================================== */
+ 
+:root {
+  --olive: #4B5136;
+  --walnut: #6B4426;
+  --cream: #E8DCC5;
+  --card: #FFFDF9;
+  --text: #2F2A22;
+}
+ 
+/* ==========  RESET / BASE  ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--cream);
+}
+ 
+img {
+  max-width: 100%;
+}
+ 
+ 
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.25;
+  color: var(--olive);
+}
+ 
+a {
+  color: var(--walnut);
+}
+ 
+a:hover {
+  color: var(--olive);
+}
+ 
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--walnut);
+  outline-offset: 3px;
+}
+ 
+/* ========== HEADER  =========== */
+header {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #fff;
+  background: var(--olive);
+}
+ 
+.header-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+ 
+/*========== dark overlay so the white text is readable on top of the video ==========*/
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom,
+              rgba(35, 38, 24, 0.65),
+              rgba(35, 38, 24, 0.25) 45%,
+              rgba(35, 38, 24, 0.65));
+}
+ 
+.header-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "logo  nav"
+    "title title";
+  padding: 28px 5%;
+}
+ 
+/*========== logo  top left ==========*/
+.header-content img {
+  grid-area: logo;
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+ 
+/*========== navigation - top right ==========*/
+.header-content nav {
+  grid-area: nav;
+  justify-self: end;
+  align-self: center;
+}
+ 
+.header-content nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 22px;
+}
+ 
+.header-content nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.2s;
+}
+ 
+.header-content nav a:hover {
+  color: #fff;
+  border-bottom-color: var(--cream);
+}
+ 
+/*========== h1 title off picture ==========*/
+.header-content h1 {
+  grid-area: title;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  margin: 0 0 80px;
+  color: #fff;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.55);
+}
+ 
+/* ========== main,container off all content ========== */
+main > section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  scroll-margin-top: 10px;
+}
+ 
+main h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 0.7em;
+}
+ 
+/*========== small walnut line under every centered heading ==========*/
+main h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 12px auto 0;
+  background: var(--walnut);
+}
+ 
+/* =========== HOME , three cards Rooms,Event,Amenities  ========== */
+#home {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 0;
+}
+ 
+#home > br,
+#home > article.amenities {
+  display: none;            
+}
+ 
+#home > h2,
+#home > p:first-of-type {
+  grid-column: 1 / -1;
+}
+ 
+#home > p:first-of-type {
+  max-width: 760px;
+  justify-self: center;
+  text-align: center;
+  margin: 0 0 40px;
+}
+ 
+/*==========  cards 1 and 2 in real article tag========== */
+#home > article {
+  grid-row: 3 / span 4;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+}
+ 
+#home > article:nth-of-type(1) { 
+  grid-column: 1;
+ }
+#home > article:nth-of-type(2) {
+   grid-column: 2; 
+  }
+ 
+#home > article img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+ 
+#home > article h3 {
+  margin: 0;
+  padding: 20px 20px 0;
+  text-align: center;
+}
+ 
+#home > article p {
+  margin: 0;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 0.92rem;
+}
+ 
+/* card 3: its image, title, text and link sit directly inside #home
+   (because of the HTML structure), so we place them in column 3 */
+#home > img,
+#home > h3,
+#home > p:last-of-type,
+#home > a {
+  grid-column: 3;
+  background: var(--card);
+}
+ 
+#home > img {
+  grid-row: 3;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+ 
+#home > h3 {
+  grid-row: 4;
+  margin: 0;
+  padding: 20px 20px 0;
+  text-align: center;
+}
+ 
+#home > p:last-of-type {
+  grid-row: 5;
+  margin: 0;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 0.92rem;
+}
+ 
+#home > a {
+  grid-row: 6;
+  border-radius: 0 0 12px 12px;
+}
+ 
+/*========== Explore for link  ==========*/
+#home a {
+  text-align: center;
+  padding: 12px 20px 24px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--walnut);
+}
+ 
+#home a:hover {
+  color: var(--olive);
+  text-decoration: underline;
+}
+ 
+#home > article a {
+  margin-top: auto;
+}
+ 
+/* ========== ABOUT US  =========== */
+#about_us {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  column-gap: 60px;
+  align-items: start;
+}
+ 
+#about_us > * {
+  grid-column: 1 / -1;
+}
+ 
+/*========== heading and picture  ==========*/
+#about_us > h3:first-of-type {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 0 24px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+ 
+#about_us > h3:first-of-type::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin-bottom: 20px;
+  background: var(--walnut);
+}
+ 
+#about_us > img {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+  border: 8px solid var(--card);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+ 
+/* right column: the paragraph with the dotted line */
+#about_us > p:first-of-type {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+  padding-left: 32px;
+  border-left: 1px dotted var(--walnut);
+}
+ 
+#about_us > p:first-of-type br {
+  display: none;            
+}
+ 
+/* ==========  FAQ ========== */
+#about_us > h3:nth-of-type(2) {
+  margin: 70px 0 0;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--walnut);
+}
+ 
+#about_us > h2 {
+  margin-top: 4px;
+}
+ 
+#about_us details {
+  width: 100%;
+  max-width: 800px;
+  justify-self: center;
+}
+ 
+details {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 16px 22px;
+  margin-bottom: 12px;
+}
+ 
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--olive);
+}
+ 
+details[open] summary {
+  margin-bottom: 8px;
+}
+ 
+details p {
+  margin: 0;
+}
+ 
+/* ========== SERVICES Rooms & Cottages + Feedback ========== */
+#services > h2 {
+  margin-bottom: 1em;
+}
+ 
+#services > section {
+  max-width: 800px;
+  margin: 0 auto 28px;
+  padding: 32px;
+  background: var(--card);
+  border-radius: 12px;
+  scroll-margin-top: 10px;
+}
+ 
+#services > section > h3:first-child {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+ 
+#rooms h4 {
+  margin: 18px 0 8px;
+  color: var(--walnut);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+ 
+#rooms p {
+  margin: 0;
+}
+ 
+#rooms p strong {
+  color: var(--walnut);
+}
+ 
+/* ========== feedback ========== */
+#feedback h2 {
+  margin-top: 10px;
+  font-size: 1.6rem;
+}
+ 
+#feedback h3 {
+  font-size: 1.15rem;
+}
+ 
+#feedback blockquote {
+  margin: 12px 0;
+  padding: 14px 20px;
+  border-left: 4px solid var(--walnut);
+  background: var(--cream);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+ 
+#feedback ul {
+  margin: 6px 0 20px;
+  padding-left: 22px;
+}
+ 
+/* ==========  gallery  ========== */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+ 
+#gallery h2 {
+  grid-column: 1 / -1;
+}
+ 
+#gallery img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+ 
+/* ===== 8. AUTHORS =====
+   Note: only the first author is inside <section id="authors">.
+   The other two end up directly inside <main> (because of an
+   extra </section> in the HTML), so both are styled the same way. */
+#authors {
+  padding-bottom: 0;
+}
+ 
+#authors > h3,
+#authors > p {
+  width: min(700px, 100%);
+}
+ 
+main > h3,
+main > p {
+  width: min(700px, 100% - 40px);
+}
+ 
+#authors > h3,
+main > h3 {
+  margin: 0 auto;
+  padding: 26px 24px 4px;
+  background: var(--card);
+  border-radius: 12px 12px 0 0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+ 
+#authors > p,
+main > p {
+  margin: 0 auto 22px;
+  padding: 0 24px 26px;
+  background: var(--card);
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+ 
+/* ==========  LOCATION ========== */
+#location {
+  text-align: center;
+}
+ 
+#location iframe {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  margin: 24px auto 0;
+  border: 0;
+  border-radius: 12px;
+}
+ 
+/* ==========  FOOTER  ========== */
+footer {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr;
+  margin-top: 40px;
+  background: var(--olive);
+  color: var(--cream);
+}
+ 
+footer > div {
+  padding: 50px 5% 40px;
+}
+ 
+footer > div + div {
+  border-left: 1px solid rgba(232, 220, 197, 0.25);
+}
+ 
+footer h3 {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 1.4rem;
+}
+ 
+footer p {
+  margin: 0;
+}
+ 
+footer a {
+  color: var(--cream);
+  overflow-wrap: anywhere;
+}
+ 
+footer a:hover {
+  color: #fff;
+}
+ 
+footer .copyright {
+  grid-column: 1 / -1;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+ 
+/* =============== to the tablet view =============== */
+@media (max-width: 900px) {
+ 
+  .header-content nav a {
+    font-size: 0.72rem;
+  }
+ 
+  /*  ==========  Home cards stack in one column ========== */
+  #home {
+    grid-template-columns: 1fr;
+  }
+ 
+  #home > h2,
+  #home > p:first-of-type,
+  #home > article,
+  #home > img,
+  #home > h3,
+  #home > p:last-of-type,
+  #home > a {
+    grid-column: 1;
+    grid-row: auto;
+  }
+ 
+  #home > article {
+    margin-bottom: 24px;
+  }
+ 
+  /* ==========  About one column  ========== */
+  #about_us {
+    grid-template-columns: 1fr;
+  }
+ 
+  #about_us > h3:first-of-type,
+  #about_us > img,
+  #about_us > p:first-of-type {
+    grid-column: 1;
+    grid-row: auto;
+  }
+ 
+  #about_us > p:first-of-type {
+    padding-left: 0;
+    border-left: none;
+    margin-top: 10px;
+  }
+ 
+  #about_us > img {
+    margin-top: 20px;
+  }
+ 
+  /* Gallery: 2 columns */
+  #gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  #gallery img {
+    height: 180px;
+  }
+ 
+  /* Footer: one column */
+  footer {
+    grid-template-columns: 1fr;
+  }
+ 
+  footer > div + div {
+    border-left: none;
+    border-top: 1px solid rgba(232, 220, 197, 0.25);
+  }
+}
+
+
+
+ 
+/* ========== to the cp view ========== */
+@media (max-width: 600px) {
+ 
+  header,
+  .header-content {
+    min-height: 90vh;
+    min-height: 90svh;
+  }
+ 
+  .header-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "logo"
+      "nav"
+      "title";
+    justify-items: center;
+    padding: 20px 4%;
+  }
+ 
+  .header-content img {
+    width: 80px;
+  }
+ 
+  .header-content nav {
+    justify-self: center;
+    margin-top: 12px;
+  }
+ 
+  .header-content nav ul {
+    justify-content: center;
+    gap: 6px 14px;
+  }
+ 
+  .header-content nav a {
+    font-size: 0.68rem;
+  }
+ 
+  .header-content h1 {
+    margin-bottom: 40px;
+  }
+ 
+  main > section {
+    padding: 50px 16px;
+  }
+ 
+  #services > section {
+    padding: 22px 18px;
+  }
+ 
+  #gallery {
+    gap: 10px;
+  }
+ 
+  #gallery img {
+    height: 140px;
+  }
+ 
+  #location iframe {
+    height: 300px;
+  }
+}
+ 
+/* ==========  ACCESSIBILITY  respect "reduce motion" ========== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
