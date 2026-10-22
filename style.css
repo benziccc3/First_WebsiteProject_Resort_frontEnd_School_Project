@@ -1,3 +1,5 @@
+
+/* ==========  >>>  container and variable of color  <<<  ==========*/
 :root {
         --olive: #4B5136;
         --walnut: #6B4426;
@@ -54,7 +56,7 @@
         outline-offset: 3px;
       }
       
-      /* =====  HEADER ===== */
+      /* ========== >>> HEADER <<< ===== */
       
       /* ========== The VIDEO is the background of the  header.Logo, title and the navigation going DOWN sit on top of it, on the left. ===========*/
       header {
@@ -132,7 +134,7 @@
         border-bottom-color: var(--cream);
       }
       
-      /* ==========  main  ========== */
+      /* ========== >>> main <<< ========== */
       main > section {
         padding: 60px 5%;
         scroll-margin-top: 10px;
@@ -171,7 +173,7 @@
         margin: 0 0 40px;
       }
       
-      /*========== Rooms Event amenities ==========*/
+      /*========== >>> Rooms Event amenities <<< ==========*/
       #home > article {
         display: flex;
         flex-direction: column;
@@ -236,7 +238,9 @@
         text-decoration: underline;
       }
       
-      /* =============  ABOUT US  ============ */
+
+
+      /* ============= >>> ABOUT US <<< ============ */
       
       /*========== left in heading and picture *  ==========*/
       #about_us > h3:first-of-type {
@@ -275,7 +279,7 @@
         display: none;            
       }
       
-      /* ===========  FAQ  =========== */
+      /* =========== >>> FAQ <<< =========== */
       #about_us > h3:nth-of-type(2) {
         margin: 70px 0 0;
         font-size: 1.1rem;
@@ -345,7 +349,7 @@
         color: var(--walnut);
       }
       
-      /*============== Feedback ================*/
+      /*============== >>> Feedback <<< ================*/
       #feedback h2 {
         margin-top: 10px;
         font-size: 1.6rem;
@@ -369,7 +373,7 @@
         padding-left: 22px;
       }
       
-      /* ============== GALLERY ============= */
+      /* ============== >>> GALLERY <<< ============= */
       
       /* ============== pictures go down one by one ================ */
       #gallery {
@@ -390,7 +394,7 @@
         border-radius: 10px;
       }
       
-      /* ==========  AUTHORS ==========*/
+      /* ========== >>> AUTHORS <<< ==========*/
       #authors {
         padding-bottom: 0;
       }
@@ -430,7 +434,7 @@
         overflow-wrap: anywhere;
       }
       
-      /* ==========  LOCATION ========== */
+      /* ========== >>> LOCATION <<< ========== */
       #location iframe {
         display: block;
         width: 100%;
@@ -441,7 +445,7 @@
         border-radius: 12px;
       }
       
-      /* ==========  FOOTER  ========== */
+      /* ============ ~~~ FOOTER ~~~ ============ */
       footer {
         display: grid;
         grid-template-columns: 1fr;
@@ -484,7 +488,7 @@
         background: rgba(0, 0, 0, 0.4);
       }
       
-      /* =========  responsive for tablet to compatible view ========== */
+      /* ========= >>> responsive for tablet to compatible view <<< ========== */
       @media (max-width: 900px) {
       
         /*======= Footer =========*/
@@ -501,12 +505,12 @@
       
       
       
-      /* ========  responsive for phone to compatible view ======= */
+      /* ======== >>> responsive for phone to compatible view <<< ======= */
       @media (max-width: 600px) {
       
         /*=============== header, video stays as the background ========== */
       
-        /* phone: not full screen. The video is a banner on top, then the logo, title and navigation below it */
+        
         header {
           display: block;
           min-height: 0;
