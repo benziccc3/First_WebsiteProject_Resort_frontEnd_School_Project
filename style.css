@@ -9,6 +9,8 @@
 
       }
 
+      
+
       /* ========== RESET / BASE ========== */
       *,
       *::before,
@@ -61,6 +63,8 @@
 
       }
 
+
+
       /* ========== shows a box around the link or FAQ  ==========*/
       a:focus-visible,
 
@@ -70,6 +74,8 @@
         outline-offset: 3px;
 
       }
+
+
 
       /* ========== >>> HEADER <<< ===== */
 
@@ -95,6 +101,8 @@
 
       }
 
+
+
       /*========== block shadow in the left for navigation , in video ==========*/
       header::after {
 
@@ -119,6 +127,8 @@
 
       }
 
+
+
       /*========== logo in the to top and then navigation ========== */
       .header-content img {
 
@@ -132,6 +142,8 @@
       .header-content nav {
         order: 3;
       }
+
+
 
       /*  ========== navigation for vertical ========== */
       .header-content nav ul {
@@ -164,6 +176,8 @@
 
       }
 
+
+
       /* ========== >>> main <<< ========== */
       main > section {
 
@@ -179,6 +193,8 @@
 
       }
 
+
+
       /*========= small walnut line under headings ========== */
       main h2::after {
 
@@ -191,6 +207,8 @@
 
       }
 
+
+
       /* ==========  HOME , Rooms , Event , Amenities ========== */
       #home {
 
@@ -199,6 +217,8 @@
         row-gap: 0;
 
       }
+
+
 
       /*==========  Hide the spacing br tags  ==========*/
       #home > br,
@@ -211,6 +231,8 @@
         margin: 0 0 40px;
       }
 
+
+
       /*========== >>> Rooms Event amenities <<< ==========*/
       #home > article {
 
@@ -222,6 +244,8 @@
         overflow: hidden;
 
       }
+
+
 
       /*=========== each one goes down: picture, title, paragraph, Explore left-aligned ========== */
       #home > article img,
@@ -254,6 +278,8 @@
 
       }
 
+
+
       /*========== Amenities: its image, title, text and link sit directly inside home ========== */
       #home > img {
         border-radius: 12px 12px 0 0;
@@ -270,6 +296,8 @@
       #home > a {
         border-radius: 0 0 12px 12px;
       }
+
+
 
       /* ========== link Explore ========== */
       #home a {
@@ -290,6 +318,8 @@
         text-decoration: underline;
 
       }
+
+
 
 
       /* ============= >>> ABOUT US <<< ============ */
@@ -313,6 +343,8 @@
 
       }
 
+
+
       /*========== picture on top, the paragraph goes below it ==========*/
       #about_us > img {
 
@@ -324,6 +356,8 @@
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 
       }
+
+
 
       /*============= right column: the paragraph with the dotted line =============*/
       #about_us > p:first-of-type {
@@ -340,6 +374,8 @@
         display: none;            
 
       }
+
+
 
       /* =========== >>> FAQ <<< =========== */
       #about_us > h3:nth-of-type(2) {
@@ -386,6 +422,8 @@
         margin: 0;
       }
 
+
+
       /* ============== SERVICES ,,Rooms,Cottages,Feedback ============== */
       #services > h2 {
         margin-bottom: 1em;
@@ -425,6 +463,8 @@
         color: var(--walnut);
       }
 
+
+
       /*============== >>> Feedback <<< ================*/
       #feedback h2 {
 
@@ -455,6 +495,8 @@
 
       }
 
+
+
       /* ============== >>> GALLERY <<< ============= */
 
       /* ============== pictures go down one by one ================ */
@@ -479,6 +521,8 @@
         border-radius: 10px;
 
       }
+
+
 
       /* ========== >>> AUTHORS <<< ==========*/
       #authors {
@@ -539,6 +583,8 @@
 
       }
 
+
+
       /* ============ ~~~ FOOTER ~~~ ============ */
       footer {
 
@@ -590,6 +636,7 @@
 
       }
 
+
       /* ========= >>> responsive for tablet to compatible view <<< ========== */
       @media (max-width: 900px) {
 
@@ -605,6 +652,7 @@
 
         }
       }
+
 
 
 
@@ -685,6 +733,8 @@
         main > section {
           padding: 50px 5%;
         }
+
+
       
         /*============ Home: picture, Explore ============*/
         #home > article img,
@@ -701,6 +751,7 @@
           height: 300px;
         }
       }
+
 
       /* ==========  smoth to click the navigation bar to automatic scrooll bar ========== */
       @media (prefers-reduced-motion: reduce) {
